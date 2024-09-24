@@ -20,9 +20,14 @@ function getHumanChoice() {
     let regex = /(rock)|(paper)|(scissors)/i;
     let response = "rock";
     do { //repeat until a valid choice is given
-        response = response ?
-            prompt("Enter your choice (rock, paper or scissors):").match(regex) :
-            prompt("Please enter either rock, or paper or scissors:").match(regex)
+        try {
+            response = response ?
+                prompt("Enter your choice (rock, paper or scissors):").match(regex) :
+                prompt("Please enter either rock, or paper or scissors:").match(regex)
+        } catch (error) {
+            console.log("Thanks for playing");
+            throw new Error("The End");
+        }
     } while (!response);
     return response[0];
 }
@@ -33,7 +38,11 @@ function playGame() {
     let round = 1;
 
     function playRound(humanChoice, computerChoice) {
-        let displayHC = humanChoice.toLowerCase();
+        try {
+            let displayHC = humanChoice.toLowerCase();
+        } catch (error) {
+            throw error;
+        }
         let result = didTheHumanWin(displayHC, computerChoice);
 
         displayHC = capitalize(displayHC);
@@ -76,7 +85,11 @@ function playGame() {
     console.log("This game will be played out of 5 rounds. Win three rounds to be declared the grand champion!");
 
     do {
-        playRound(getHumanChoice(), getComputerChoice());
+        try {
+            playRound(getHumanChoice(), getComputerChoice());
+        } catch (error) {
+            return;
+        }
         round++;
     } while (round <= 5 && (humanScore !== 3) && (computerScore !== 3));
 
