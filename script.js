@@ -17,14 +17,20 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
-    return prompt("Enter your choice (rock, paper or scissors):");
+    let regex = /(rock)|(paper)|(scissors)/i;
+    let response = "rock";
+    do { //repeat until a valid choice is given
+        response = response ?
+            prompt("Enter your choice (rock, paper or scissors):").match(regex) :
+            prompt("Please enter either rock, or paper or scissors:").match(regex)
+    } while (!response);
+    return response[0];
 }
 
 function playGame() {
     let humanScore = 0;
     let computerScore = 0;
     let round = 1;
-
 
     function playRound(humanChoice, computerChoice) {
         let displayHC = humanChoice.toLowerCase();
@@ -65,7 +71,6 @@ function playGame() {
         }
     }
 
-
     console.clear();
     console.log("Welcome to the Rock, Paper and Scissors game!");
     console.log("This game will be played out of 5 rounds. Win three rounds to be declared the grand champion!");
@@ -73,14 +78,16 @@ function playGame() {
     do {
         playRound(getHumanChoice(), getComputerChoice());
         round++;
-    } while ( round <= 5 && (humanScore !== 3) && (computerScore !== 3));
+    } while (round <= 5 && (humanScore !== 3) && (computerScore !== 3));
+
     console.log("\\\/\\\/\\\/\\\/\\\/\\\/\\\/\\\/\\\/\\\/\\\/\\\/");
     console.log("  \\\/\\\/\\\/\\\/\\\/\\\/\\\/\\\/\\\/\\\/");
     console.log("    \\\/\\\/\\\/\\\/\\\/\\\/\\\/\\\/");
     console.log("      \\\/\\\/\\\/\\\/\\\/\\\/");
-    if ( computerScore === humanScore ) {
+
+    if (computerScore === humanScore) {
         console.log("That's weird! You tied!");
-    } else if ( computerScore > humanScore ) {
+    } else if (computerScore > humanScore) {
         console.log("It's a sad day. The computer wins!");
     } else {
         console.log("Hurray! You have won!");
