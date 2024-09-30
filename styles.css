@@ -10,7 +10,7 @@ body {
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
-    min-height: 100vh;
+    min-height: 100dvh;
 }
 
 fieldset {
@@ -76,6 +76,7 @@ div#results {
     overflow-y: auto;
     background: repeating-linear-gradient(45deg, #3b3030, gray);
     background-size: 10px;
+    width: clamp(330px, 50vw, 660px);
 
     h2 {
         text-decoration: underline;
