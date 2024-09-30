@@ -1,10 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Console Rock, Paper, Scissors</title>
-    </head>
-    <body>
-        <script src="script.js"></script>
-    </body>
+
+<head>
+    <meta charset="utf-8">
+    <title>Console Rock, Paper, Scissors</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1>Welcome to the Rock, Paper and Scissors game!</h1>
+    <fieldset>
+        <legend>Make your choice:</legend>
+        <button type="button" id="rock">Rock</button>
+        <button type="button" id="paper">Paper</button>
+        <button type="button" id="scissors">Scissors</button>
+    </fieldset>
+    <section id="scoreboard">
+        <div>
+            Player:
+            <div class="score" id="playerScore">0</div>
+        </div>
+        <div>
+            Computer:
+            <div class="score" id="computerScore">0</div>
+        </div>
+    </section>
+    <div id="results">
+        <h2>Results</h2>
+    </div>
+    <div><button type="button" id="playAgain">Play Again!</button></div>
+    <script src="script.js"></script>
+</body>
+
 </html>
