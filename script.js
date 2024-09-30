@@ -88,7 +88,7 @@ function playGame() {
         try {
             playRound(getHumanChoice(), getComputerChoice());
         } catch (error) {
-            return;
+            return; //exit if user presses Cancel on prompt
         }
         round++;
     } while (round <= 5 && (humanScore !== 3) && (computerScore !== 3));
