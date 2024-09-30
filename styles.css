@@ -9,7 +9,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    gap: 1rem;
+    gap: clamp(.5rem, 0.8rem, 1rem);
     min-height: 100dvh;
 }
 
@@ -17,7 +17,7 @@ fieldset {
     display: flex;
     justify-content: space-around;
     padding: 5px;
-    margin: 10px;
+    margin: .5vh 10px;
     gap: 1rem;
 }
 
@@ -73,7 +73,7 @@ section > div {
 
 div#results {
     border: 3px double black;
-    height: clamp(40dvh, 50dvh, 50dvh);
+    height: clamp(35dvh, 50dvh, 50dvh);
     color: white;
     margin: 0 1rem;
     overflow-y: auto;
@@ -103,7 +103,6 @@ div.winner {
     border-width: 5px;
     border-bottom: none;
     border-color: rgb(66, 213, 117);
-    padding-bottom: 1rem;
 }
 
 footer {
