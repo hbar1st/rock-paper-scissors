@@ -10,26 +10,30 @@
 
 <body>
     <h1>Welcome to the Rock, Paper and Scissors game!</h1>
-    <fieldset>
-        <legend>Make your choice:</legend>
-        <button type="button" id="rock">Rock</button>
-        <button type="button" id="paper">Paper</button>
-        <button type="button" id="scissors">Scissors</button>
-    </fieldset>
-    <section id="scoreboard">
-        <div>
-            Player:
-            <div class="score" id="playerScore">0</div>
+    <div>
+        <fieldset>
+            <legend>Make your choice:</legend>
+            <button type="button" id="rock">Rock</button>
+            <button type="button" id="paper">Paper</button>
+            <button type="button" id="scissors">Scissors</button>
+        </fieldset>
+        <section id="scoreboard">
+            <div>
+                Player:
+                <div class="score" id="playerScore">0</div>
+            </div>
+            <div>
+                Computer:
+                <div class="score" id="computerScore">0</div>
+            </div>
+        </section>
+        <div id="results">
+            <h2>Results</h2>
         </div>
-        <div>
-            Computer:
-            <div class="score" id="computerScore">0</div>
-        </div>
-    </section>
-    <div id="results">
-        <h2>Results</h2>
+        <div><button type="button" id="playAgain">Play Again!</button></div>
     </div>
-    <div><button type="button" id="playAgain">Play Again!</button></div>
+    <footer>Rules: The first to reach 5 points wins. (Rock will beat Scissors, Scissors will beat Paper and Paper will
+        beat Rock. Good Luck!)</footer>
     <script src="script.js"></script>
 </body>
 
