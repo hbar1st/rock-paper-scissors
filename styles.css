@@ -38,7 +38,9 @@ button {
 
 h1 {
     margin-top: 1rem;
+    font-size: clamp(1em, 2em, 3em);
 }
+
 h1, h2 {
     padding-left: 1rem;
     padding-top: .5rem;   
@@ -55,6 +57,7 @@ section > div {
     flex-direction: column;
     width: 100px;
     height: 4rem;
+    border-right: 2px solid rgb(218, 217, 217);
     border: 3px inset silver;
     border-bottom: none;
     font-weight: 600;
@@ -70,7 +73,7 @@ section > div {
 
 div#results {
     border: 3px double black;
-    height: 50vh;
+    height: clamp(40dvh, 50dvh, 50dvh);
     color: white;
     margin: 0 1rem;
     overflow-y: auto;
