@@ -32,7 +32,7 @@ function playGame() {
     let computerScore = 0;
 
     function resetGame() {
-        playAgainBtn.style.display = "none";
+        playAgainBtn.style.opacity = "0";
         rockBtn.addEventListener("click", getPlayerSelection);
         paperBtn.addEventListener("click", getPlayerSelection);
         scissorsBtn.addEventListener("click", getPlayerSelection);
@@ -83,7 +83,7 @@ function playGame() {
             rockBtn.removeEventListener("click", getPlayerSelection);
             paperBtn.removeEventListener("click", getPlayerSelection);
             scissorsBtn.removeEventListener("click", getPlayerSelection);
-            playAgainBtn.style.display = "block";
+            playAgainBtn.style.opacity = "100";
         } 
     };
 
